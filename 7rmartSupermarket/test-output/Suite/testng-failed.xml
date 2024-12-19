@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="adminpassword" value="1234"/>
+  <parameter name="subcategoryname" value="Product"/>
+  <parameter name="password" value="admin"/>
+  <parameter name="namecategory" value="Olives"/>
+  <parameter name="username" value="admin"/>
+  <parameter name="adminusername" value="StarJin"/>
+  <parameter name="usrname" value="bsndsdj"/>
+  <test thread-count="5" name="Chrometest(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="testscript.AdminUserSearchTest">
+        <methods>
+          <include name="adminusersearchpage"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testscript.AdminUserSearchTest -->
+    </classes>
+  </test> <!-- Chrometest(failed) -->
+  <test thread-count="5" name="Edgetest(failed)">
+    <parameter name="browser" value="Edge"/>
+    <classes>
+      <class name="testscript.AdminUserSearchTest">
+        <methods>
+          <include name="adminusersearchpage"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testscript.AdminUserSearchTest -->
+    </classes>
+  </test> <!-- Edgetest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
