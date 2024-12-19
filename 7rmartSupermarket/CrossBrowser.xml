@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+<parameter name="username" value="admin"></parameter>
+<parameter name="password" value="admin"></parameter>
+<parameter name="adminusername" value="StarJin"></parameter>
+<parameter name="adminpassword" value="1234"></parameter>
+<parameter name="usrname" value="bsndsdj"></parameter>
+<parameter name="namecategory" value="Olives"></parameter>
+<parameter name="subcategoryname" value="Product"></parameter>
+  <test name="Chrometest">
+  <parameter name="browzer" value="Chrome"></parameter>
+    <classes>
+       <class name="testscript.AdminUserSearchTest"/>
+      <methods>
+      <include name="adminusersearchpage"></include>
+      </methods>
+ </classes>
+  </test> <!-- Test -->
+  <test name="Edgetest">
+  <parameter name="browzer" value="Edge"></parameter>
+    <classes>
+       <class name="testscript.AdminUserSearchTest"/>
+      <methods>
+      <include name="adminusersearchpage"></include>
+      </methods>
+ </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
