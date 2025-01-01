@@ -2,10 +2,8 @@ package testscript;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
-
 import constants.Constant;
 import utilities.ScreenshotUtility;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,16 +18,16 @@ import org.testng.annotations.AfterMethod;
 
 public class Base {
 	public WebDriver driver;
-  public Properties properties; //inbuilt class-properties
-  public FileInputStream fis;
-  @BeforeMethod
-  @Parameters("browzer")
-  public void beforeMethod(String browzer) throws Exception {
-	  try {
+	public Properties properties; // inbuilt class-properties
+	public FileInputStream fis;
+
+	@BeforeMethod
+	@Parameters("browzer")
+	public void beforeMethod(String browzer) throws Exception {
+		try {
 			properties = new Properties();
 			fis = new FileInputStream(Constant.CONFIGFILE);
 			properties.load(fis);
-
 		} catch (FileNotFoundException exception) {
 			exception.printStackTrace();
 		}
@@ -42,27 +40,21 @@ public class Base {
 		} else {
 			throw new Exception("invalid browser");
 		}
-	  
-		  //driver=new ChromeDriver();
-		  //driver.get("https://groceryapp.uniqassosiates.com/admin/login");
+		// driver=new ChromeDriver();
+		// driver.get("https://groceryapp.uniqassosiates.com/admin/login");
 		driver.get(properties.getProperty("url"));
-		  driver.manage().window().maximize();
-		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));//implicit wait
-	  }
- 
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));// implicit wait
+	}
 
-  @AfterMethod
-  public void afterMethod(ITestResult itResult) throws IOException {
-	  
-	  if (itResult.getStatus() == ITestResult.FAILURE) {
-	  			ScreenshotUtility sc = new ScreenshotUtility();
-	  			sc.captureFailureScreenShot(driver, itResult.getName());
-	  		}
-	  		if (driver != null) {
-	  			driver.quit();
-	  		}
-	  	}
-	  
-  }
-
-
+	@AfterMethod
+	public void afterMethod(ITestResult itResult) throws IOException {
+		if (itResult.getStatus() == ITestResult.FAILURE) {
+			ScreenshotUtility sc = new ScreenshotUtility();
+			sc.captureFailureScreenShot(driver, itResult.getName());
+		}
+		if (driver != null) {
+			driver.quit();
+		}
+	}
+}

@@ -1,11 +1,9 @@
 package testscript;
 
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import constants.Constant;
 import supermarketpages.EditSubCategory;
 import supermarketpages.HomePage;
@@ -17,6 +15,7 @@ public class EditSubCategoryTest extends Base {
 	public HomePage homepage;
 	public SubCategory subcategorypage;
 	public EditSubCategory editsubcategorypage;
+
 	@Test
 	@Parameters({ "subcategoryname" })
 	public void editSubCategoryPage(String subcategoryname) throws IOException {
@@ -25,11 +24,10 @@ public class EditSubCategoryTest extends Base {
 		UserLogin login = new UserLogin(driver);
 		login.enterUserNamePasswordField(username, password);
 		homepage = login.loginButton();
-		subcategorypage=homepage.subCategory();
-		editsubcategorypage=homepage.subCategoryEditButton();
+		subcategorypage = homepage.subCategory();
+		editsubcategorypage = homepage.subCategoryEditButton();
 		editsubcategorypage.subCatName(subcategoryname).updateButtonClick();
 		boolean alertmsgisloaded = editsubcategorypage.isalertisloaded();
 		Assert.assertTrue(alertmsgisloaded, Constant.ERRORMESSAGEFORALERT);
-
-}
+	}
 }

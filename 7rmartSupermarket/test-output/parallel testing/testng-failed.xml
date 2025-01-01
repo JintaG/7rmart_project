@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Failed suite [parallel testing]">
+  <parameter name="adminpassword" value="1234"/>
+  <parameter name="subcategoryname" value="Product"/>
+  <parameter name="browzer" value="Chrome"/>
+  <parameter name="password" value="admin"/>
+  <parameter name="namecategory" value="Olives"/>
+  <parameter name="username" value="admin"/>
+  <parameter name="adminusername" value="StarJin"/>
+  <parameter name="usrname" value="bsndsdj"/>
+  <test thread-count="5" parallel="classes" name="Chrometest(failed)">
+    <classes>
+      <class name="testscript.AdminUserSearchTest">
+        <methods>
+          <include name="adminusersearchpage" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testscript.AdminUserSearchTest -->
+      <class name="testscript.ManageNewsTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="manageNewsPage"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testscript.ManageNewsTest -->
+    </classes>
+  </test> <!-- Chrometest(failed) -->
+</suite> <!-- Failed suite [parallel testing] -->
