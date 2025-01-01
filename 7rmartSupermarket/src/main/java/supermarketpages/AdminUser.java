@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -14,7 +13,6 @@ public class AdminUser {
 	public AdminUser(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
@@ -40,13 +38,11 @@ public class AdminUser {
 	public AdminUser newusername(String newusernamefield) {
 		usernameinput.sendKeys(newusernamefield);
 		return this;
-
 	}
 
 	public AdminUser newpassword(String newpasswordfield) {
 		passwordinput.sendKeys(newpasswordfield);
 		return this;
-
 	}
 
 	public AdminUser dropdownlist() {
@@ -69,7 +65,5 @@ public class AdminUser {
 
 	public boolean isalertisloaded() {
 		return alert.isDisplayed();// checking assertion
-
 	}
-
 }

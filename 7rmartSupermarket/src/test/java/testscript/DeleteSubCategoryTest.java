@@ -1,17 +1,13 @@
 package testscript;
-
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import constants.Constant;
 import supermarketpages.DeleteSubCategory;
 import supermarketpages.HomePage;
 import supermarketpages.SubCategory;
 import supermarketpages.UserLogin;
 import utilities.ExcelUtility;
-
 public class DeleteSubCategoryTest extends Base {
 	public HomePage homepage;
 	public SubCategory subcategorypage;
@@ -28,8 +24,6 @@ public class DeleteSubCategoryTest extends Base {
 		Thread.sleep(2000);
 		deletesubcategory.alert();
 		Thread.sleep(2000);
-		//boolean isalertisenabled =deletesubcategory.isalertisenabled();
-		//Assert.assertTrue(isalertisenabled, Constant.ERRORMESSAGEFORALERTENABLE);
 		boolean alertmsgisloaded =deletesubcategory.isalertisloaded();
 		Assert.assertTrue(alertmsgisloaded, Constant.ERRORMESSAGEFORALERT);
  }

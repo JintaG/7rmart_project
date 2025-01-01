@@ -11,7 +11,6 @@ public class HomePage {
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 	@FindBy(xpath = "//a[@data-toggle='dropdown']")
@@ -22,52 +21,59 @@ public class HomePage {
 	WebElement loginpage;
 	@FindBy(xpath = "(//a[@class='small-box-footer'])[1]")
 	WebElement adminusers;
-	@FindBy(xpath="(//a[@class='small-box-footer'])[3]")
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[3]")
 	WebElement categorypage;
-	@FindBy(xpath="(//p[text()='Sub Category'])[1]")
+	@FindBy(xpath = "(//p[text()='Sub Category'])[1]")
 	WebElement subcategorypg;
-	@FindBy(xpath ="(//a[@class='btn btn-sm btn btn-danger btncss'])[1]")
+	@FindBy(xpath = "(//a[@class='btn btn-sm btn btn-danger btncss'])[1]")
 	WebElement deletebutton;
-	@FindBy(xpath ="(//a[@class='btn btn-sm btn btn-primary btncss'])[1]")
+	@FindBy(xpath = "(//a[@class='btn btn-sm btn btn-primary btncss'])[1]")
 	WebElement editbutton;
-	@FindBy(xpath ="(//a[@class='small-box-footer'])[9]")
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[9]")
 	WebElement managenewsbtn;
-	@FindBy(xpath ="(//a[@class='small-box-footer'])[10]")
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[10]")
 	WebElement managefooterbtn;
+
 	public void admin() {
 		admindropdown.click();
 	}
+
 	public void logout() {
 		logout.click();
 	}
+
 	public AdminUser adminuser() {
 		adminusers.click();
 		return new AdminUser(driver);
 	}
+
 	public AddCategory categorypg() {
 		categorypage.click();
 		return new AddCategory(driver);
 	}
+
 	public SubCategory subCategory() {
 		subcategorypg.click();
-		return new SubCategory(driver);	
+		return new SubCategory(driver);
 	}
+
 	public DeleteSubCategory subCategoryDelete() {
 		deletebutton.click();
 		return new DeleteSubCategory(driver);
 	}
+
 	public EditSubCategory subCategoryEditButton() {
 		editbutton.click();
-		return new EditSubCategory(driver);	
+		return new EditSubCategory(driver);
 	}
+
 	public ManageNews manageNews() {
 		managenewsbtn.click();
-		return new ManageNews(driver);	
+		return new ManageNews(driver);
 	}
+
 	public ManageFooterText managefooter() {
 		managefooterbtn.click();
-		return new ManageFooterText(driver);	
+		return new ManageFooterText(driver);
 	}
 }
-
-

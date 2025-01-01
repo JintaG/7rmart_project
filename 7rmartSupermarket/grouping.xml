@@ -2,21 +2,21 @@
 <suite name="Suite">
 	<parameter name="username" value="admin"></parameter>
 	<parameter name="password" value="admin"></parameter>
-	<parameter name="Invalidusername" value="Jinta"></parameter>
-	<parameter name="Invalidpassword" value="1234"></parameter>
-	<parameter name="invalidusername" value="Ammu"></parameter>
-	<parameter name="invalidpassword" value="5667"></parameter>
 	<parameter name="adminusername" value="StarJin"></parameter>
 	<parameter name="adminpassword" value="1234"></parameter>
 	<parameter name="usrname" value="bsndsdj"></parameter>
 	<parameter name="namecategory" value="Olives"></parameter>
 	<parameter name="subcategoryname" value="Product"></parameter>
 	<parameter name="browzer" value="Chrome"></parameter>
-	<test thread-count="5" name="Test">
+	<test thread-count="5" name="grouping">
+		<groups>
+			<run>
+				<include name="regression"></include>
+			</run>
+		</groups>
 		<classes>
 			<class name="testscript.UserLoginTest" />
 		</classes>
 	</test> <!--
 	Test -->
-</suite> <!--
-Suite -->
+</suite>
